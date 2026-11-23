@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+  <meta name="theme-color" content="#5b4bdb">
+  <meta name="description" content="ChatApp — private communication by GMC Pvt LTD">
+  <title>ChatApp — GMC Pvt LTD</title>
+  <link rel="icon" type="image/svg+xml" href="logo.svg">
+  <link rel="manifest" href="manifest.webmanifest">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="app-shell">
+    <aside class="sidebar" aria-label="Primary navigation">
+      <header class="sidebar-header">
+        <button class="brand" id="brandButton" aria-label="ChatApp home"><img class="brand-logo" src="logo.svg" alt=""><span>ChatApp</span></button>
+        <div class="header-actions">
+          <button class="icon-btn" id="statusButton" aria-label="Status" title="Status">◉</button>
+          <button class="icon-btn" id="menuButton" aria-label="Menu" title="Menu">⋮</button>
+        </div>
+      </header>
+      <label class="search-box"><span>⌕</span><input id="chatSearch" type="search" placeholder="Search chats" autocomplete="off"></label>
+      <nav class="chat-list" id="chatList" aria-label="Conversations">
+        <button class="chat-row active" data-name="Ayesha Khan" data-status="Online" data-initials="AK"><span class="avatar purple">AK<span class="presence"></span></span><span class="chat-copy"><strong>Ayesha Khan</strong><small>Voice note · 0:18</small></span><span class="chat-meta"><time>10:42</time><b>2</b></span></button>
+        <button class="chat-row" data-name="GMC Team" data-status="4 members" data-initials="GT"><span class="avatar blue">GT</span><span class="chat-copy"><strong>GMC Team</strong><small>Ali: The files are ready</small></span><span class="chat-meta"><time>09:18</time></span></button>
+        <button class="chat-row" data-name="Ahmed Raza" data-status="Last seen today" data-initials="AR"><span class="avatar orange">AR</span><span class="chat-copy"><strong>Ahmed Raza</strong><small>See you at 6 PM</small></span><span class="chat-meta"><time>Yesterday</time></span></button>
+        <button class="chat-row" data-name="Family" data-status="6 members" data-initials="FA"><span class="avatar green">FA</span><span class="chat-copy"><strong>Family</strong><small>Mom: سلام!</small></span><span class="chat-meta"><time>Mon</time></span></button>
+      </nav>
+      <footer class="sidebar-footer"><span class="mini-avatar">G</span><div><strong>GMC Account</strong><small>Private mode</small></div><button class="icon-btn" id="settingsButton" aria-label="Settings">⚙</button></footer>
+    </aside>
+    <main class="conversation">
+      <header class="conversation-header">
+        <button class="mobile-back" id="mobileBack" aria-label="Back">←</button>
+        <span class="avatar purple" id="activeAvatar">AK<span class="presence"></span></span>
+        <div class="contact"><strong id="activeName">Ayesha Khan</strong><small id="activeStatus">Online</small></div>
+        <div class="call-actions"><button class="icon-btn" id="voiceCall" aria-label="Start voice call" title="Voice call">☎</button><button class="icon-btn" id="videoCall" aria-label="Start video call" title="Video call">▣</button><button class="icon-btn" id="searchButton" aria-label="Search conversation">⌕</button></div>
+      </header>
+      <section class="messages" id="messages" aria-live="polite">
+        <div class="date-chip">Today</div>
+        <article class="message incoming"><p>Assalam-o-Alaikum! How is the project going?</p><time>10:38 ✓✓</time></article>
+        <article class="message outgoing"><p>Great, the new demo is ready. I added a much cleaner interface.</p><time>10:39 ✓✓</time></article>
+        <article class="message incoming"><p>Excellent! Can you share the preview?</p><time>10:40 ✓✓</time></article>
+        <article class="message outgoing"><p>Of course. The app is now responsive on mobile and desktop.</p><time>10:41 ✓✓</time></article>
+        <article class="message incoming"><p>Voice note · 0:18</p><div class="audio-line"><button class="play-btn" aria-label="Play voice note">▶</button><span></span></div><time>10:42 ✓✓</time></article>
+      </section>
+      <footer class="composer"><button class="icon-btn" id="attachButton" aria-label="Attach file">＋</button><button class="icon-btn" id="emojiButton" aria-label="Choose emoji">☺</button><label class="composer-input"><input id="messageInput" type="text" placeholder="Type a message" autocomplete="off"></label><button class="send-btn" id="sendButton" aria-label="Send message">➤</button></footer>
+    </main>
+  </div>
+  <dialog id="callDialog"><div class="call-visual"><span class="call-avatar">AK</span><h2 id="callTitle">Calling Ayesha Khan</h2><p id="callSubtitle">Demo interface — calling is not connected</p></div><div class="call-controls"><button id="muteCall" aria-label="Mute microphone">Mic</button><button id="speakerCall" aria-label="Speaker">Speaker</button><button class="end-call" id="endCall" aria-label="End call">End</button></div></dialog>
+  <div class="toast" id="toast" role="status"></div>
+  <script src="app.js"></script>
+</body>
+</html>
